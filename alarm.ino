@@ -26,7 +26,7 @@ void loop(){
   Serial.println(smokeValue);
   delay(1000);
 
-  if (tempValue > 650 && smokeValue > 300){
+  if (tempValue > 205 && smokeValue > 80){
     digitalWrite(greenLED, LOW);
     while (true){
       Serial.print("Temp = ");
@@ -36,7 +36,7 @@ void loop(){
       //Serial.println(degreesC);
       Serial.print("Smoke = ");
       Serial.println(smokeValue);
-      if (digitalRead(buttonPin) == HIGH &&(analogRead(tempPin) <= 600 || analogRead(smokePin) <= 350)) break;
+      if (digitalRead(buttonPin) == HIGH &&(analogRead(tempPin) <= 200 || analogRead(smokePin) <= 80)) break;
       digitalWrite(redLED, HIGH);
       tone(piezoPin, 2000, 500);
       delay(500);
