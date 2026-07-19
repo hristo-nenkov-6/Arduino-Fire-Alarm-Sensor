@@ -12,7 +12,7 @@ The alarm in this project is represented by a **Piezo Buzzer**. After the fire i
 ---
 
 ### Engineering Implementation
-An **Arduino UNO** development board containing an **ATmega328P** microprocessor was used for this project[cite: 1]. 
+An **Arduino UNO** development board containing an **ATmega328P** microprocessor was used for this project. 
 
 #### Hardware Component Mapping
 | Functional Element | Electrical Component |
@@ -28,7 +28,7 @@ An **Arduino UNO** development board containing an **ATmega328P** microprocessor
 | **Resistor for button** | 10 KOhm |
 
 #### Wiring and I/O Configuration
-* **Analog Inputs (`A0` & `A1`)**: The sensors transfer analog data to the Arduino[cite: 1]. The internal Analog-to-Digital Converter (ADC) translates these signals into digital values ranging from `0` to `1023` for the microprocessor[cite: 1].
+* **Analog Inputs (`A0` & `A1`)**: The sensors transfer analog data to the Arduino. The internal Analog-to-Digital Converter (ADC) translates these signals into digital values ranging from `0` to `1023` for the microprocessor.
 * **Digital Input (`Pin 8`)**: Dedicated to the tactile button to read states `1` (pressed) or `0` (released).
 * **Outputs (`Pins 11, 12, 13`)**: The two LEDs receive simple digital signals (`HIGH`/`LOW`). The Piezo Buzzer utilizes pulse-width modulation techniques to generate audio frequencies by rapidly alternating square wave cycles (`0 -> 1 -> 0`) depending on the target pitch. For instance, a 1000 Hz signal generates 1000 complete cycles (amounting to 2000 individual signal changes/oscillations per second).
 
@@ -43,10 +43,15 @@ An **Arduino UNO** development board containing an **ATmega328P** microprocessor
 
 ---
 
+<img width="500" height="335" alt="image" src="visual/TinkerCAD_image.png" />
+
+---
+
+
 ### Software Implementation
 
 #### Program Logic Flowchart (Summary)
 1. **`setup()`**: Configures `piezoPin`, `redLED`, and `greenLED` as `OUTPUT`, and `buttonPin` as `INPUT`.
 2. **`loop()`**: Continuously reads `tempValue` and `smokeValue`.
-3. **Condition Check**: If `tempValue > 205` AND `smokeValue > 80`, it turns off the green LED and enters the infinite Alarm Loop[cite: 1]. Otherwise, the Green LED stays `HIGH`.
+3. **Condition Check**: If `tempValue > 205` AND `smokeValue > 80`, it turns off the green LED and enters the infinite Alarm Loop. Otherwise, the Green LED stays `HIGH`.
 4. **Alarm Loop**: Flashes the Red LED, sounds the 2000 Hz buzzer, and introduces delays. It breaks the loop only if the button is pressed AND parameters drop below thresholds (`tempValue <= 200` OR `smokeValue <= 80`).
