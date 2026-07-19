@@ -41,10 +41,10 @@ An **Arduino UNO** development board containing an **ATmega328P** microprocessor
 | Button | `buttonPin` | 8 |
 | Piezo Speaker | `piezoPin` | 11 |
 
----
-
 <img width="500" height="335" alt="image" src="visual/TinkerCAD_image.png" />
 
+Video of project:
+https://drive.google.com/drive/folders/1NiGBPwmv80Vwk2qXGd93N_j0G4mo4jEA
 ---
 
 
