@@ -1,0 +1,4 @@
+Here is the video implementation of the project.
+As the MQ135 server is both a smoke and alcohol sensor, I represent it with a bottle of alcohol, not smoke, as I make the video at my home.
+
+https://drive.google.com/drive/folders/1NiGBPwmv80Vwk2qXGd93N_j0G4mo4jEA
