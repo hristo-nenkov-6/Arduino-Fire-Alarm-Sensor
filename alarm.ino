@@ -4,6 +4,7 @@ int greenLED = 13;
 int redLED = 12;
 int buttonPin = 8;
 int piezoPin = 11;
+int degreesCelsius = 0;
 
 void setup(){
   pinMode(piezoPin, OUTPUT);
@@ -18,6 +19,9 @@ void loop(){
   int smokeValue = analogRead(smokePin);
   Serial.print("Temp = ");
   Serial.println(tempValue);
+  //degreesC = ((sensorValue * 0.00488) - 0.5) * 100;
+  //Serial.print("degrees C = ");
+  //Serial.println(degreesC);
   Serial.print("Smoke = ");
   Serial.println(smokeValue);
   delay(1000);
@@ -27,6 +31,9 @@ void loop(){
     while (true){
       Serial.print("Temp = ");
       Serial.println(tempValue);
+      //degreesC = ((sensorValue * 0.00488) - 0.5) * 100;
+      //Serial.print("degrees C = ");
+      //Serial.println(degreesC);
       Serial.print("Smoke = ");
       Serial.println(smokeValue);
       if (digitalRead(buttonPin) == HIGH &&(analogRead(tempPin) <= 600 || analogRead(smokePin) <= 350)) break;
